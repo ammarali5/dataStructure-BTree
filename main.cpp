@@ -115,18 +115,31 @@ public:
 	}
 };
 
-int main()
-{
+
+int main() {
+	// BTree order 3 (int)
 	BTree<int, 3> t1;
+
 	t1.Insert(1);
 	t1.Insert(5);
 	t1.Insert(0);
 	t1.Insert(4);
 	t1.Insert(3);
 	t1.Insert(2);
+
 	t1.Print();
 
+	/*
+	Expected:
+	1,4
+	  0
+	  2,3
+	  5
+	*/
+
+	// BTree order 5 (char)
 	BTree<char, 5> t;
+
 	t.Insert('G');
 	t.Insert('I');
 	t.Insert('B');
@@ -146,7 +159,21 @@ int main()
 	t.Insert('N');
 	t.Insert('P');
 	t.Insert('Q');
+
 	t.Print();
+
+	/*
+	Expected:
+	K
+	  C,G
+		A,B
+		D,E,F
+		H,I,J
+	  N,R
+		L,M
+		P,Q
+		S,T
+	*/
 
 	return 0;
 }
